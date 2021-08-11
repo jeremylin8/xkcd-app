@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
+/* Variables */
+:root {
+  --white-color: #fff;
+  --dark-color: #1b1b1b;
+  --lightDark-color: #4a4a4a;
+  --blue-color: #4274be;
+  --gray-color: #e3e1e1;
+  --lightGray-color: #ebebeb;
+  --lightestGray-color: #f8f5f5;
 }
 
-.App-logo {
-  height: 40vmin;
+/***************************
+BASE STYLES
+****************************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 56.25%; /* 1rem = 9px */
+  }
+}
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 50%; /* 1rem = 8px */
+  }
+}
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 75%; /* 1rem = 12px */
+  }
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/***************************
+TYPOGRAPHY
+****************************/
+.heading-primary {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.heading-secondary {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--lightDark-color);
+}
+
+/***************************
+UTILITIES
+****************************/
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important;
+}
+@media only screen and (max-width: 900px) {
+  .u-margin-bottom-medium {
+    margin-bottom: 3rem !important;
+  }
+}
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/***************************
+COMIC STYLES
+****************************/
+
+.landing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 95vh;
+}
+
+.header-text {
+  text-decoration: none;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 1rem;
+  color: var(--blue-color);
+}
+
+.comic__heading-box {
+  margin-bottom: 3rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .comic__img {
+    width: 70rem;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .comic__img {
+    width: 38rem;
+    height: auto;
+  }
+}
+
+.caret-btn {
+  width: 48%;
+  height: 5rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  background: var(--gray-color);
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.caret-btn-light {
+  background: var(--lightestGray-color);
+  cursor: not-allowed;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.caret {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.comic__pagination {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
+  align-self: center;
 }
 
-.App-link {
-  color: #61dafb;
+.pagination-btn {
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  background: var(--lightGray-color);
+  text-decoration: none;
+  text-align: center;
+  border-radius: 1.8rem;
+  padding: 1.7rem 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.comic__pagination-num {
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--lightDark-color);
+}
+
+.current-num {
+  background-color: var(--white-color);
+}
+
+.current-num > .comic__pagination-num {
+  font-weight: 800;
+}
+
+.btn-prev {
+  float: left;
+}
+
+.btn-next {
+  float: right;
 }
